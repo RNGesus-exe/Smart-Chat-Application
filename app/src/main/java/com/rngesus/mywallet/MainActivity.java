@@ -1,4 +1,4 @@
-nay package com.rngesus.mywallet;
+package com.rngesus.mywallet;
 
 import androidx.appcompat.app.AppCompatActivity;
 
