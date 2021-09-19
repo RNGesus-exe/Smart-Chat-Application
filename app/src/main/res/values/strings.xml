@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">My Wallet</string>
+    <string name="get_started">Get Started</string>
+    <string name="enter_your_mobile_number">Enter your mobile number</string>
+    <string name="_92_xxxxxxxxxx">+92-XXXXXXXXXX</string>
+    <string name="todo">TODO</string>
+    <string name="select_you_country">SELECT YOU COUNTRY</string>
+    <string name="your_phone_number">Your phone number</string>
+    <string name="select_your_country">SELECT YOUR COUNTRY</string>
+    <string name="send_otp">Send_otp</string>
+    <string name="noaccount">Didn\'t get the OTP?</string>
+    <string name="resend">RESEND</string>
+    <string name="verify">VERIFY</string>
+    <string name="_91_1234567890">+91-1234567890</string>
+    <string name="enter_your_received_otp_here">Enter your received OTP here</string>
+    <string name="verify_otp">Verify OTP</string>
 </resources>
