@@ -131,17 +131,16 @@ private SpinnerAdapter  mAdapter;
         }
         PhoneAuthProvider.verifyPhoneNumber(options);
     }
-//    @Override
-//    protected void onStart()
-//    {
-//        super.onStart();
-//        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-//        if (user != null) {
-//            Toast.makeText(this, "welcome", Toast.LENGTH_SHORT).show();
-//
-//        }//No User is Logged in
-//
-//    }
+    @Override
+    protected void onStart()
+    {
+        super.onStart();
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            Toast.makeText(this, "welcome", Toast.LENGTH_SHORT).show();
+        }//No User is Logged in
+
+    }
     private void init() {
         mCountryList = new ArrayList<>();
         mCountryList.add(new countryitem("+92", R.drawable.pak,"ur"));
