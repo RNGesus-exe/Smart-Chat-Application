@@ -3,7 +3,6 @@ package com.rngesus.mywallet.Login;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -17,7 +16,6 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
-import com.rngesus.mywallet.MainActivity;
 import com.rngesus.mywallet.R;
 import com.rngesus.mywallet.databinding.ActivityOtpVerficationBinding;
 
@@ -37,7 +35,7 @@ public class Otp_Verfication extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_otp__verfication);
+        setContentView(R.layout.activity_otp_verfication);
         otpbind= ActivityOtpVerficationBinding.inflate(getLayoutInflater());
         setContentView(otpbind.getRoot());
         mauth=FirebaseAuth.getInstance();
