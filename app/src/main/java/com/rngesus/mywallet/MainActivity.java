@@ -46,7 +46,9 @@ public class MainActivity extends AppCompatActivity {
                 if (mVerificationId != null) {
                     VerifyPhoneNumberWithCode();
                 }
-                startPhoneNumberVerification();
+                else {
+                    startPhoneNumberVerification();
+                }
             }
             else{
                 Toast.makeText(this, "Enter a Phone Number", Toast.LENGTH_SHORT).show();
@@ -62,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onVerificationFailed(@NonNull FirebaseException e) {
-                DisplayVerificationError();
             }
 
             @Override
@@ -76,12 +77,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void DisplayVerificationError() {
-        Toast.makeText(this, "Incorrect Verification Code", Toast.LENGTH_SHORT).show();
-    }
-
     private void VerifyPhoneNumberWithCode(){
         PhoneAuthCredential credential = PhoneAuthProvider.getCredential(mVerificationId,mCode.getText().toString());
+        SignInWithPhoneAuthCredential(credential);
     }
 
     private void SignInWithPhoneAuthCredential(PhoneAuthCredential phoneAuthCredential) {
