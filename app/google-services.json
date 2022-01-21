@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "717463965711",
+    "project_id": "chat-app-1da88",
+    "storage_bucket": "chat-app-1da88.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:717463965711:android:4b63f3690986ba3b3e937a",
+        "android_client_info": {
+          "package_name": "com.rngesus.mywallet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "717463965711-ef23atcofnk8qjed8gth826juhdlcq92.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA46Ous7QFz5V-G6DesVQSczF3tiIQ1z24"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "717463965711-ef23atcofnk8qjed8gth826juhdlcq92.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
