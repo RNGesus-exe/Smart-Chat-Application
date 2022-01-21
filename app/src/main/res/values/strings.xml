@@ -14,4 +14,8 @@
     <string name="_91_1234567890">+91-1234567890</string>
     <string name="enter_your_received_otp_here">Enter your received OTP here</string>
     <string name="verify_otp">Verify OTP</string>
+    <string name="emailid">EmailID</string>
+    <string name="passwordatleast8_letter">Password(ATLEAST 8 LETTER)</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="alreadyhave_an_accountsignein">Already have an Account SigneIn!</string>
 </resources>

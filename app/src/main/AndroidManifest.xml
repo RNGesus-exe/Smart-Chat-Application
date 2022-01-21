@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.rngesus.mywallet">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,9 +12,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyWallet">
-        <activity android:name=".Login.Otp_Verfication"></activity>
+        <activity android:name=".StudyBuddy.Login.Student.StudentMainLooby"></activity>
+        <activity android:name=".StudyBuddy.Login.Teacher.TeacherMainLooby" />
+        <activity android:name=".StudyBuddy.Login.SB_Signup">
+
+        </activity>
+        <activity android:name=".StudyBuddy.Login.SB_Login" >
+        </activity>
+        <activity android:name=".Settings" />
+        <activity android:name=".Login.Otp_Verfication" />
         <activity android:name=".Login.Number_verify" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

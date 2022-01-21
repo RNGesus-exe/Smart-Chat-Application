@@ -19,6 +19,7 @@ import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.rngesus.mywallet.MainActivity;
 import com.rngesus.mywallet.R;
+import com.rngesus.mywallet.StudyBuddy.Login.SB_Signup;
 import com.rngesus.mywallet.databinding.ActivityOtpVerficationBinding;
 
 import java.util.Locale;
@@ -74,6 +75,8 @@ public class Otp_Verfication extends AppCompatActivity {
                                             otpbind.progressBarVerify.setVisibility(View.VISIBLE);
                                             otpbind.btnVerify.setVisibility(View.INVISIBLE);
                                             Toast.makeText(Otp_Verfication.this, "Welcome..."+code, Toast.LENGTH_SHORT).show();
+                                            Intent intent=new Intent(Otp_Verfication.this, SB_Signup.class);
+                                            startActivity(intent);
 
 
                                         } else {

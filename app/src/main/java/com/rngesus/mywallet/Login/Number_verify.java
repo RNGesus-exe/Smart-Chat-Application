@@ -21,6 +21,8 @@ import com.rngesus.mywallet.Adapter.SpinnerAdapter;
 import com.rngesus.mywallet.MainActivity;
 import com.rngesus.mywallet.ModelClass.countryitem;
 import com.rngesus.mywallet.R;
+import com.rngesus.mywallet.StudyBuddy.Login.SB_Login;
+import com.rngesus.mywallet.StudyBuddy.Login.SB_Signup;
 import com.rngesus.mywallet.databinding.ActivityNumberVerifyBinding;
 
 import java.util.ArrayList;
@@ -138,6 +140,9 @@ private SpinnerAdapter  mAdapter;
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
             Toast.makeText(this, "welcome", Toast.LENGTH_SHORT).show();
+            Intent intent=new Intent(Number_verify.this, SB_Login.class);
+            startActivity(intent);
+
         }//No User is Logged in
 
     }
