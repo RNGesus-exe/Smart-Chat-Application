@@ -77,6 +77,19 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onStart()
+    {
+        super.onStart();
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            Intent intent=new Intent(this,MainPageActivity.class);
+            startActivity(intent);
+
+        }//No User is Logged in
+
+    }
+
     private void VerifyPhoneNumberWithCode(){
         PhoneAuthCredential credential = PhoneAuthProvider.getCredential(mVerificationId,mCode.getText().toString());
         SignInWithPhoneAuthCredential(credential);
