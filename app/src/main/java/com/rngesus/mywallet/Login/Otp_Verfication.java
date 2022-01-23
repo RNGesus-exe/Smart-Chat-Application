@@ -73,8 +73,8 @@ public class Otp_Verfication extends AppCompatActivity {
                                             otpbind.progressBarVerify.setVisibility(View.VISIBLE);
                                             otpbind.btnVerify.setVisibility(View.INVISIBLE);
                                             Toast.makeText(Otp_Verfication.this, "Welcome..."+code, Toast.LENGTH_SHORT).show();
-                                            Intent intent=new Intent(Otp_Verfication.this, SB_Signup.class);
-                                            startActivity(intent);
+//                                            Intent intent=new Intent(Otp_Verfication.this, SB_Signup.class);
+//                                            startActivity(intent);
 
 
                                         } else {

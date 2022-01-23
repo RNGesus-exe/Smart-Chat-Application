@@ -43,7 +43,7 @@ public class SB_Login extends AppCompatActivity {
         binding3.tvSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(SB_Login.this,SB_Signup.class);
+                Intent intent=new Intent(SB_Login.this,SB_Signup_student.class);
                 startActivity(intent);
             }
         });
@@ -70,8 +70,9 @@ public class SB_Login extends AppCompatActivity {
                         public void onDataChange(final DataSnapshot dataSnapshot) {
                             for (DataSnapshot data : dataSnapshot.getChildren()) {
                                 String value=data.child("phoneNumber").getValue(String.class);
+                                String password=data.child("password").getValue(String.class);
                                 Toast.makeText(SB_Login.this, "d="+value, Toast.LENGTH_SHORT).show();
-                                if(Number.equals(value))
+                                if(Number.equals(value) && binding3.Password.getText().toString().contentEquals(password))
                                 {
                                     Toast.makeText(SB_Login.this, "FOUND USER", Toast.LENGTH_SHORT).show();
 
@@ -86,6 +87,10 @@ public class SB_Login extends AppCompatActivity {
                                         startActivity(intent);
                                     }
 
+                                }
+                                else
+                                {
+                                    Toast.makeText(SB_Login.this, "No User Found", Toast.LENGTH_SHORT).show();
                                 }
 
                             }

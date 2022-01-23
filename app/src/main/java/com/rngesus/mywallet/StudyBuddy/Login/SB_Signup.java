@@ -29,6 +29,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.rngesus.mywallet.MainActivity;
 import com.rngesus.mywallet.R;
+import com.rngesus.mywallet.StudentUser;
 import com.rngesus.mywallet.User;
 import com.rngesus.mywallet.databinding.ActivityNumberVerifyBinding;
 import com.rngesus.mywallet.databinding.ActivitySbSignupBinding;
@@ -65,36 +66,47 @@ public class SB_Signup extends AppCompatActivity {
     }
     private void createUser()
     {
-        if (binding2.CBStudent.isChecked()||binding2.CBTeacher.isChecked())
-        {
-            FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
-            assert currentFirebaseUser != null;
-            String Number=currentFirebaseUser.getPhoneNumber();
-            if(binding2.CBStudent.isChecked())
-            {
-                mDatabase = FirebaseDatabase.getInstance();
-                String num= Number.substring(0,3);
-                mDbRef = mDatabase.getReference("Student/"+num);
-               /* User user = new User("Jahanzaib", false,Number);*/
-                /*mDbRef.child(Number).setValue(user);*/
+        if (!TextUtils.isEmpty(binding2.editTextTextPassword.getText()) && binding2.editTextTextPassword.length() >= 8) {
+            if (!TextUtils.isEmpty(binding2.editTextTextPassword2.getText())) {
+                if (binding2.CBTeacher.isChecked() && !TextUtils.isEmpty(binding2.filename.getText())) {
+                    if(binding2.editTextTextPassword.getText().toString().contentEquals(binding2.editTextTextPassword2.getText().toString()))
+                    {
+                        FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
+                        String Number=currentFirebaseUser.getPhoneNumber();
+                        mDatabase = FirebaseDatabase.getInstance();
+                        String num= Number.substring(0,3);
+                        mDbRef = mDatabase.getReference("Teacher/"+num);
+                        UploadPdf_File(Data,Number);
 
-            }
-            else {
-                mDatabase = FirebaseDatabase.getInstance();
-                String num= Number.substring(0,3);
-                mDbRef = mDatabase.getReference("Teacher/"+num);
-                UploadPdf_File(Data,Number);
+                    }
 
+
+                    else
+                    {
+                        binding2.editTextTextPassword.setError("Password Mismatch");
+
+                    }
+
+                } else {
+                    Toast.makeText(this, "  Please Upload Your CV", Toast.LENGTH_SHORT).show();
+                }
             }
         }
         else
-            {
-                Toast.makeText(this, "  Please Select One Field", Toast.LENGTH_SHORT).show();
+        {
+            Toast.makeText(this, "Field cannot be empty or Password must be greater than 8", Toast.LENGTH_SHORT).show();
         }
     }
 
     public void Student(View view) {
         binding2.CBTeacher.setChecked(false);
+        onBackPressed();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slide_from_left,R.anim.slide_to_right);
     }
 
     public void Teacher(View view) {
@@ -131,7 +143,7 @@ public class SB_Signup extends AppCompatActivity {
                 Task<Uri> mImageUrl=taskSnapshot.getStorage().getDownloadUrl();
                 while(!mImageUrl.isComplete());
                 Uri uri=mImageUrl.getResult();
-                User user = new User("Jahanzaib", false, Number,uri.toString() );
+                User user = new User("Jahanzaib", false, Number,uri.toString(),binding2.editTextTextPassword.getText().toString());
                 mDbRef.child(Number).setValue(user);
                 Toast.makeText(SB_Signup.this, "Image Uploaded!!", Toast.LENGTH_SHORT).show();
 
@@ -144,4 +156,7 @@ public class SB_Signup extends AppCompatActivity {
             }
         });
     }
+
+
 }
+
