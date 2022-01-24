@@ -18,6 +18,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.rngesus.mywallet.User.UserListAdapter;
+import com.rngesus.mywallet.User.UserObject;
+import com.rngesus.mywallet.Utils.CountryToPhonePrefix;
 
 import java.util.ArrayList;
 
@@ -58,7 +61,7 @@ public class FindUserActivity extends AppCompatActivity {
                 phone = ISOPrefix + phone;
             }
 
-            UserObject mContact = new UserObject(name,phone);
+            UserObject mContact = new UserObject("",name,phone);
             contactList.add(mContact);
             getUserDetails(mContact);
         }
@@ -82,7 +85,15 @@ public class FindUserActivity extends AppCompatActivity {
                             name = childSnapShot.child("name").getValue().toString();
                         }
 
-                        UserObject mUser = new UserObject(name, phone);
+                        UserObject mUser = new UserObject(childSnapShot.getKey(),name,phone);
+                        if(name.equals(phone)){
+                            for(UserObject mContactIterator : contactList){
+                                if(mContactIterator.getPhone().equals(mUser.getPhone())){
+                                    mUser.setName(mContactIterator.getName());
+                                }
+                            }
+                        }
+
                         userList.add(mUser);
                         mUserListAdapter.notifyDataSetChanged();
                     }

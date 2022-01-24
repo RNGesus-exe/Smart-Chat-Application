@@ -1,4 +1,4 @@
-package com.rngesus.mywallet;
+package com.rngesus.mywallet.Utils;
 
 import java.util.HashMap;
 import java.util.Map;

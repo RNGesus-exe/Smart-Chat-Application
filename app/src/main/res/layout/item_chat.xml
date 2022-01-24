@@ -6,16 +6,11 @@
     android:id="@+id/layout">
 
     <TextView
+        android:padding="20sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Name"
-        android:id="@+id/name"
-        />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Phone"
-        android:id="@+id/phone"
+        android:text="Title"
+        android:id="@+id/title"
         />
 
 </LinearLayout>
