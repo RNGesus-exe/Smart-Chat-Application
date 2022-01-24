@@ -113,10 +113,10 @@ public class LoginActivity extends AppCompatActivity {
                             mUserDB.addListenerForSingleValueEvent(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                    if(snapshot.exists()){
+                                    if(!snapshot.exists()){
                                         Map<String,Object> userMap = new HashMap<>();
                                         userMap.put("phone",user.getPhoneNumber());
-                                        userMap.put("name",user.getDisplayName());
+                                        userMap.put("name",user.getPhoneNumber());
                                         mUserDB.updateChildren(userMap);
                                     }
                                     userIsLoggedIn();

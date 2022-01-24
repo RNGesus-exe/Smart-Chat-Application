@@ -101,11 +101,10 @@ public class FindUserActivity extends AppCompatActivity {
 
         TelephonyManager telephonyManager = (TelephonyManager) getApplicationContext().getSystemService(getApplicationContext().TELEPHONY_SERVICE);
         if(telephonyManager.getNetworkCountryIso() != null){
-            if(telephonyManager.getNetworkCountryIso().toString().equals("")){
+            if(!telephonyManager.getNetworkCountryIso().toString().equals("")){
                 iso = telephonyManager.getNetworkCountryIso().toString();
             }
         }
-
         return CountryToPhonePrefix.getPhone(iso);
     }
 
