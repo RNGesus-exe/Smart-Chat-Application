@@ -4,12 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/layout-v21/spinner.xml" value="0.3333333333333333" />
+        <entry key="app/src/main/res/layout/activity_chat.xml" value="0.3333333333333333" />
         <entry key="app/src/main/res/layout/activity_find_user.xml" value="0.3333333333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.28125" />
         <entry key="app/src/main/res/layout/activity_main_page.xml" value="0.3333333333333333" />
         <entry key="app/src/main/res/layout/activity_number_verify.xml" value="0.3333333333333333" />
         <entry key="app/src/main/res/layout/activity_otp__verfication.xml" value="0.3333333333333333" />
         <entry key="app/src/main/res/layout/item_chat.xml" value="0.3333333333333333" />
+        <entry key="app/src/main/res/layout/item_media.xml" value="0.3333333333333333" />
+        <entry key="app/src/main/res/layout/item_message.xml" value="0.3333333333333333" />
         <entry key="app/src/main/res/layout/item_user.xml" value="0.3333333333333333" />
       </map>
     </option>

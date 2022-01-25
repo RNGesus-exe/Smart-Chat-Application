@@ -1,5 +1,7 @@
 package com.rngesus.mywallet.Chat;
 
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
+import com.rngesus.mywallet.ChatActivity;
 import com.rngesus.mywallet.R;
 
 import java.util.ArrayList;
@@ -38,7 +41,13 @@ public class ChatListAdapter extends RecyclerView.Adapter<ChatListAdapter.ChatLi
     public void onBindViewHolder(@NonNull ChatListViewHolder holder,int position) {
         holder.mTitle.setText(chatList.get(position).getChatId());
 
-        holder.mLayout.setOnClickListener(view -> { });
+        holder.mLayout.setOnClickListener(view -> {
+            Intent intent = new Intent(view.getContext(), ChatActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putString("chatID", chatList.get(holder.getAdapterPosition()).getChatId());
+            intent.putExtras(bundle);
+            view.getContext().startActivity(intent);
+        });
     }
 
     @Override
